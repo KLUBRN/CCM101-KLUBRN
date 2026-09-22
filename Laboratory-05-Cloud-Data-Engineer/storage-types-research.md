@@ -1,0 +1,13 @@
+# Research: Types of Cloud Storage
+
+| Storage TypeDescriptionPrimary Use CaseCloud Provider Example |                                                                                                                                                             |                                                                                                                      |                                                            |
+| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Block Storage**                                             | Divides data into fixed-size blocks, with each block having its own address. It can be connected to a server and functions similar to a virtual hard drive. | Commonly used for operating systems, databases, and applications that require fast and reliable storage performance. | AWS EBS (also Azure Managed Disks, Google Persistent Disk) |
+| **File Storage**                                              | Organizes data into files and folders within a directory structure. It can be shared across a network using protocols such as NFS or SMB.                   | Used for shared files, content management, home directories, and applications that require access to common files.   | AWS EFS (also Azure Files, Google Filestore)               |
+| **Object Storage**                                            | Stores data as individual objects, with each object containing its data, metadata, and a unique identifier. It is accessed through HTTP and APIs.           | Suitable for storing large amounts of unstructured data, such as photos, videos, backups, and logs.                  | AWS S3 (also Azure Blob Storage, Google Cloud Storage)     |
+
+## Why Object Storage for the Client's Photos
+
+Object Storage is a good choice for the client's photo-sharing application because it can handle millions of images without requiring manual management of disks or storage capacity. Each photo is stored as a separate object with its own metadata and can be uploaded or accessed through HTTP using an S3-compatible API.
+
+Compared with block storage, which is connected to a specific server, and file storage, which relies on shared folders, object storage provides better scalability for a large number of photos. It is also durable, cost-effective, and independent of the web server or application container.
